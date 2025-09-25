@@ -1,0 +1,13 @@
+# Base image
+FROM nginx:alpine
+
+# Copy custom HTML or static site files into the default nginx html directory
+COPY ./dist /usr/share/nginx/html
+
+# Optional: Copy a custom nginx.conf if you have one
+# COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose port (optional)
+EXPOSE 80
+
+# NGINX runs automatically via CMD in the base image, no need to add CMD
